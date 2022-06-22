@@ -15,18 +15,15 @@ interface MyPosition {                                    //создаем ша�
     y: number | undefined
 }
 
-interface MyPositionWithDefault extends MyPosition {        //создаем дочерний шаблон с значением по умолчанию
-    default: string
-}
                                                     //перегрузки
 
 function position(): MyPosition                           // ничего не возвращает 
-function position(a: number): MyPositionWithDefault       // если 1 параметр
+function position(a: number): MyPosition | string       // если 1 параметр
 function position(a: number, b: number): MyPosition       // если 2 параметра
 
 
 function position(a?: number, b?: number) {               // определяем саму функцию
-    if (!a && !b) {                                       
+    if (!a && !b) {                                       // если нет двух аргументов возвращаем undefined                     
         return {x: undefined, y: undefined}
     }
 
