@@ -1,4 +1,4 @@
-// guards - вспомогательные конструкции, которые помогают работать с типами
+// guards - вспомогательные условия, которые блокируют возможность ошибки вызова не того типа
 
 
 
@@ -27,7 +27,7 @@ class MyError {
 }
 
 function handle(res: MyResponse | MyError)  {       // функция одновременно обрабатывает 2 класса
-    if (res instanceof MyResponse) {                // проверить пренадлежность объекта к классу
+    if (res instanceof MyResponse) {                // instanceof - проверить пренадлежность объекта к классу
         return {
             info: res.header + res.result
         }

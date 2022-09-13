@@ -1,5 +1,5 @@
 interface Rect {                // создаем шаблон интерфейса
-    readonly id: string         // задаем параметры (readonly - фиксация изменений)
+    readonly id: string         // задаем параметры (readonly - блокировка изменений)
     color?: string              // "?"" - необязательный параметр
     size: {
         width: number
@@ -79,7 +79,7 @@ const css = {
 }
 
 interface Styles {
-//    border: string,           перечислять все свойства неэффективно
+//    border: string,           перечислять все свойства одного типа неэффективно
 //    marginTop: string,
 //    borderRadius: string
 [key: string]: string        // вот это эффективно
